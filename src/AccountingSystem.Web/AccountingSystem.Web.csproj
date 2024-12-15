@@ -13,4 +13,8 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\AccountingSystem.Application.Contract\AccountingSystem.Application.Contract.csproj" />
+  </ItemGroup>
+
 </Project>

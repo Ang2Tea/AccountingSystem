@@ -4,4 +4,9 @@
         <TargetFramework>netstandard2.0</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\AccountingSystem.Application.Contract\AccountingSystem.Application.Contract.csproj" />
+      <ProjectReference Include="..\AccountingSystem.Domain\AccountingSystem.Domain.csproj" />
+    </ItemGroup>
+
 </Project>
