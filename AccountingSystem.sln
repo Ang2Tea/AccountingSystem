@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+#
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{74A41C70-7EF8-4C08-8532-EF6EB5939312}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CC09D154-1FAE-4F21-83AD-5EBED2631D46}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingSystem.Domain", "src\AccountingSystem.Domain\AccountingSystem.Domain.csproj", "{C84FD931-4544-4E43-9922-9C93D987D119}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingSystem.Application", "src\AccountingSystem.Application\AccountingSystem.Application.csproj", "{454EE156-367E-474E-B800-1316A5F39D08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingSystem.Application.Contract", "src\AccountingSystem.Application.Contract\AccountingSystem.Application.Contract.csproj", "{1308E356-F16D-4188-96A1-BFB91FA69ED7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingSystem.EntityFramework", "src\AccountingSystem.EntityFramework\AccountingSystem.EntityFramework.csproj", "{3E1E4E65-CEB4-4A07-83A0-9E15EB908D29}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccountingSystem.Web", "src\AccountingSystem.Web\AccountingSystem.Web.csproj", "{647AAFAC-28E7-499A-A066-8F8013133791}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BFABAB85-5CC8-434B-8F75-CE9C9295B66F}"
+	ProjectSection(SolutionItems) = preProject
+		compose.yaml = compose.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{C84FD931-4544-4E43-9922-9C93D987D119} = {74A41C70-7EF8-4C08-8532-EF6EB5939312}
+		{454EE156-367E-474E-B800-1316A5F39D08} = {74A41C70-7EF8-4C08-8532-EF6EB5939312}
+		{1308E356-F16D-4188-96A1-BFB91FA69ED7} = {74A41C70-7EF8-4C08-8532-EF6EB5939312}
+		{3E1E4E65-CEB4-4A07-83A0-9E15EB908D29} = {74A41C70-7EF8-4C08-8532-EF6EB5939312}
+		{647AAFAC-28E7-499A-A066-8F8013133791} = {74A41C70-7EF8-4C08-8532-EF6EB5939312}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C84FD931-4544-4E43-9922-9C93D987D119}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C84FD931-4544-4E43-9922-9C93D987D119}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C84FD931-4544-4E43-9922-9C93D987D119}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C84FD931-4544-4E43-9922-9C93D987D119}.Release|Any CPU.Build.0 = Release|Any CPU
+		{454EE156-367E-474E-B800-1316A5F39D08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{454EE156-367E-474E-B800-1316A5F39D08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{454EE156-367E-474E-B800-1316A5F39D08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{454EE156-367E-474E-B800-1316A5F39D08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1308E356-F16D-4188-96A1-BFB91FA69ED7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1308E356-F16D-4188-96A1-BFB91FA69ED7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1308E356-F16D-4188-96A1-BFB91FA69ED7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1308E356-F16D-4188-96A1-BFB91FA69ED7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E1E4E65-CEB4-4A07-83A0-9E15EB908D29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E1E4E65-CEB4-4A07-83A0-9E15EB908D29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E1E4E65-CEB4-4A07-83A0-9E15EB908D29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E1E4E65-CEB4-4A07-83A0-9E15EB908D29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{647AAFAC-28E7-499A-A066-8F8013133791}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{647AAFAC-28E7-499A-A066-8F8013133791}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{647AAFAC-28E7-499A-A066-8F8013133791}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{647AAFAC-28E7-499A-A066-8F8013133791}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

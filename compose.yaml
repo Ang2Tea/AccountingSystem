@@ -1,0 +1,6 @@
+﻿services:
+  accountingsystem.web:
+    image: accountingsystem.web
+    build:
+      context: .
+      dockerfile: src/AccountingSystem.Web/Dockerfile
