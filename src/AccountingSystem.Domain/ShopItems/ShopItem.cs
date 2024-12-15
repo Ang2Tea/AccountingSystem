@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using AccountingSystem.Domain.Core;
 using AccountingSystem.Domain.Transactions;
 
@@ -29,13 +30,15 @@ namespace AccountingSystem.Domain.ShopItems
             Transactions = new List<TransactionShopItem>();
         }
 
-        public void AddTransaction(TransactionType transactionType, int amount)
+        public Task AddTransaction(TransactionType transactionType, int amount)
         {
             if (Transactions == null)
                 Transactions = new List<TransactionShopItem>();
 
             var newTransaction = new TransactionShopItem(this, transactionType, amount);
             Transactions.Add(newTransaction);
+
+            return Task.CompletedTask;
         }
     }
 }
