@@ -64,7 +64,7 @@ namespace AccountingSystem.Application.Users
             return result;
         }
 
-        public Task<UserDto> UpdateAsync(ChangeUserDto input)
+        public Task<UserDto> UpdateAsync(Guid id, ChangeUserDto input)
         {
             throw new NotImplementedException();
         }
