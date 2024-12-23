@@ -9,7 +9,7 @@ namespace AccountingSystem.Application.Contract.ShopItems
     {
         Task<ShopItemDto> CreateAsync(ChangeShopItemDto input);
         Task<List<ShopItemDto>> GetListAsync();
-        Task<ShopItemDto> GetCategoryAsync(Guid id);
+        Task<ShopItemDto> GetAsync(Guid id);
         Task<ShopItemDto> UpdateAsync(Guid id, ChangeShopItemDto input);
         Task DeleteAsync(Guid id);
     }
