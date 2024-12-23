@@ -1,3 +1,4 @@
+using AccountingSystem.Domain.ShopItems;
 using AccountingSystem.Domain.Users;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +9,9 @@ public class AccountingSystemDbContext(
     ) : DbContext(options)
 {
     public DbSet<User> Users { get; set; }
+    public DbSet<Category> Categories { get; set; }
+    public DbSet<ShopItem> ShopItems { get; set; }
+    
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
