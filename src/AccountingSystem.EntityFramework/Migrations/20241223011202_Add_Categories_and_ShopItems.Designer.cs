@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace AccountingSystem.EntityFramework.Migrations
 {
     [DbContext(typeof(AccountingSystemDbContext))]
-    [Migration("20241223004510_Add_Categories")]
-    partial class Add_Categories
+    [Migration("20241223011202_Add_Categories_and_ShopItems")]
+    partial class Add_Categories_and_ShopItems
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,7 +64,7 @@ namespace AccountingSystem.EntityFramework.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("ShopItem");
+                    b.ToTable("ShopItems");
                 });
 
             modelBuilder.Entity("AccountingSystem.Domain.Transactions.TransactionShopItem", b =>

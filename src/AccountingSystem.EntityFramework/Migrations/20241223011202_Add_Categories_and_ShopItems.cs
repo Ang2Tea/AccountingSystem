@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace AccountingSystem.EntityFramework.Migrations
 {
     /// <inheritdoc />
-    public partial class Add_Categories : Migration
+    public partial class Add_Categories_and_ShopItems : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -25,7 +25,7 @@ namespace AccountingSystem.EntityFramework.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ShopItem",
+                name: "ShopItems",
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
@@ -36,9 +36,9 @@ namespace AccountingSystem.EntityFramework.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ShopItem", x => x.Id);
+                    table.PrimaryKey("PK_ShopItems", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ShopItem_Categories_CategoryId",
+                        name: "FK_ShopItems_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
@@ -59,16 +59,16 @@ namespace AccountingSystem.EntityFramework.Migrations
                 {
                     table.PrimaryKey("PK_TransactionShopItem", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_TransactionShopItem_ShopItem_ShopItemId",
+                        name: "FK_TransactionShopItem_ShopItems_ShopItemId",
                         column: x => x.ShopItemId,
-                        principalTable: "ShopItem",
+                        principalTable: "ShopItems",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_ShopItem_CategoryId",
-                table: "ShopItem",
+                name: "IX_ShopItems_CategoryId",
+                table: "ShopItems",
                 column: "CategoryId");
 
             migrationBuilder.CreateIndex(
@@ -84,7 +84,7 @@ namespace AccountingSystem.EntityFramework.Migrations
                 name: "TransactionShopItem");
 
             migrationBuilder.DropTable(
-                name: "ShopItem");
+                name: "ShopItems");
 
             migrationBuilder.DropTable(
                 name: "Categories");
