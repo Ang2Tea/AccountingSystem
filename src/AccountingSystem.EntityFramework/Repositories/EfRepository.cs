@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 using AccountingSystem.Domain.Core;
 using AccountingSystem.EntityFramework.EntityFrameworkCore;
@@ -14,6 +15,11 @@ public class EfRepository<TEntity, TKey>(
     where TEntity : Entity<TKey> 
     where TKey :  IEquatable<TKey>
 {
+    public Task<IQueryable<TEntity>> GetQueryableAsync()
+    {
+        return Task.FromResult(context.Set<TEntity>().AsQueryable());
+    }
+
     public async Task CreateAsync(TEntity entity)
     {
         await context.Set<TEntity>().AddAsync(entity);
@@ -36,6 +42,18 @@ public class EfRepository<TEntity, TKey>(
             .AsQueryable();
         
         return await query.ToListAsync();
+    }
+
+    public Task<IQueryable<TEntity>> WithDetails(params Expression<Func<TEntity, object>>[] propertySelectors)
+    {
+        var result = context.Set<TEntity>().AsQueryable();
+
+        foreach (var propertySelector in propertySelectors)
+        {
+            result = result.Include(propertySelector);
+        }
+        
+        return Task.FromResult(result);
     }
 
     public async Task UpdateAsync(TEntity entity)
