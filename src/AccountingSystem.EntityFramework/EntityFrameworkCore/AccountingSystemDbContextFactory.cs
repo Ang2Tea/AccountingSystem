@@ -32,7 +32,7 @@ public class AccountingSystemDbContextFactory
     private static IConfigurationRoot BuildConfiguration()
     {
         var builder = new ConfigurationBuilder()
-            .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../AccountingSystem.Web2/"))
+            .SetBasePath(Path.Combine(Directory.GetCurrentDirectory(), "../AccountingSystem.Web/"))
             .AddJsonFile("appsettings.json", optional: false);
 
         return builder.Build();
