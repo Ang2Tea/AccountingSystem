@@ -1,21 +1,21 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <Content Include="..\..\.dockerignore">
-      <Link>.dockerignore</Link>
-    </Content>
-  </ItemGroup>
+    <ItemGroup>
+      <Content Include="..\..\.dockerignore">
+        <Link>.dockerignore</Link>
+      </Content>
+    </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\AccountingSystem.Application\AccountingSystem.Application.csproj" />
-    <ProjectReference Include="..\AccountingSystem.EntityFramework\AccountingSystem.EntityFramework.csproj" />
-  </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\AccountingSystem.Application\AccountingSystem.Application.csproj" />
+      <ProjectReference Include="..\AccountingSystem.EntityFramework\AccountingSystem.EntityFramework.csproj" />
+    </ItemGroup>
 
 </Project>
