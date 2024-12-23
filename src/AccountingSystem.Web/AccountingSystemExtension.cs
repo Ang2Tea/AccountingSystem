@@ -53,7 +53,7 @@ public static class MigrationExtensions
             sourceModel.GetRelationalModel(),
             readOptimizedModel.GetRelationalModel());
 
-        if (!diffsExist)
+        if (diffsExist)
         {
             return;
         }
