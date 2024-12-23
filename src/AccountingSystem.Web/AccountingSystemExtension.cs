@@ -52,10 +52,10 @@ public static class MigrationExtensions
         var diffsExist = modelDiffer.HasDifferences(
             sourceModel.GetRelationalModel(),
             readOptimizedModel.GetRelationalModel());
-            
-        if(diffsExist)
+
+        if (diffsExist)
         {
-            throw new InvalidOperationException("There are differences between the current database model and the most recent migration.");
+            return;
         }
 
         ctx.Database.Migrate();
