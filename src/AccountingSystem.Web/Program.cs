@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddDbContext<AccountingSystemDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("AccountingSystem")));
+
 builder.Services.AddRazorPages();
 builder.Services.Di();
 
