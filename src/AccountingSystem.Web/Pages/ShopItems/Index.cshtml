@@ -1,7 +1,33 @@
 @page
 @model AccountingSystem.Web.Pages.ShopItems.Index
 @{
-    ViewData["Title"] = "Shop items page";
+    ViewData["Title"] = "Товары";
 }
 
-<h1>Привет</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col" hidden>Индификатор</th>
+        <th scope="col">Название</th>
+        <th scope="col">Категория</th>
+        <th scope="col">Описание</th>
+        <th scope="col">Цена</th>
+    </tr>
+    </thead>
+    <tbody>
+    @for (var i = 0; i < Model.ShopItems.Count; i++)
+    {
+        var shopItem = Model.ShopItems[i];
+
+        <tr>
+            <th scope="row">@(i + 1)</th>
+            <td hidden>@shopItem.Id</td>
+            <td>@shopItem.Name</td>
+            <td>@(shopItem.Category?.Title ?? "Неизвестно")</td>
+            <td>@shopItem.Description</td>
+            <td>@shopItem.Price</td>
+        </tr>
+    }
+    </tbody>
+</table>
