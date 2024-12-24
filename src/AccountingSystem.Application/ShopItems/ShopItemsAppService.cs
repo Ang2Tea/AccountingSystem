@@ -29,7 +29,7 @@ namespace AccountingSystem.Application.ShopItems
                 Name = shopItem.Name,
                 Description = shopItem.Description,
                 Price = shopItem.Price,
-                Category =
+                Category = new CategoryDto()
                 {
                     Id = shopItem.Category.Id,
                     Title = shopItem.Category.Title,
