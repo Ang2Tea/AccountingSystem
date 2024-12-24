@@ -1,0 +1,32 @@
+@page
+@model AccountingSystem.Web.Pages.Categories.Index
+@{
+    ViewData["Title"] = "Категории";
+}
+@* <div> *@
+@*     <button type="button" class="btn btn-primary">Создать категорию</button> *@
+@* </div> *@
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col" hidden>Индификатор</th>
+            <th scope="col">Название</th>
+            <th scope="col">Описание</th>
+        </tr>
+    </thead>
+    <tbody>
+    @for (var i = 0; i < Model.Categories.Count; i++)
+    {
+        var category = Model.Categories[i];
+        
+        <tr>
+            <th scope="row">@(i + 1)</th>
+            <td hidden>@category.Id</td>
+            <td>@Model.Categories[i].Title</td>
+            <td>@Model.Categories[i].Description</td>
+        </tr>
+    }
+    </tbody>
+</table>
