@@ -3,6 +3,9 @@
 @{
     ViewData["Title"] = "Товары";
 }
+<div>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#changeModal">Создать</button>
+</div>
 
 <table class="table">
     <thead>
@@ -31,3 +34,40 @@
     }
     </tbody>
 </table>
+
+<div class="modal fade" id="changeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title">Новая категория</h1>
+            </div>
+            <div class="modal-body container-fluid">
+                <div class="row">
+                    <label class="form-label">Название</label>
+                    <input class="form-control" asp-for="ChangeShopItem.Name"/>
+                </div>
+                <div class="row">
+                    <label class="form-label">Категория</label>
+                    <select class="form-select" aria-label="Категории">
+                        @foreach (var category in Model.Categories)
+                        {
+                            <option value="@category.Id">@category.Title</option>
+                        }
+                    </select>
+                </div>
+                <div class="row">
+                    <label class="form-label">Описание</label>
+                    <textarea class="form-control" asp-for="ChangeShopItem.Description"></textarea>
+                </div>
+                <div class="row">
+                    <label class="form-label">Цена</label>
+                    <input class="form-control" type="number" asp-for="ChangeShopItem.Price"/>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                <button type="button" class="btn btn-primary">Сохранить</button>
+            </div>
+        </div>
+    </div>
+</div>
