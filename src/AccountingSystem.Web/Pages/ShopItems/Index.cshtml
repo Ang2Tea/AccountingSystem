@@ -10,25 +10,33 @@
 <table class="table">
     <thead>
     <tr>
-        <th scope="col">#</th>
         <th scope="col" hidden>Индификатор</th>
+        <th scope="col"></th>
         <th scope="col">Название</th>
         <th scope="col">Категория</th>
-        <th scope="col">Описание</th>
         <th scope="col">Цена</th>
     </tr>
     </thead>
     <tbody>
-    @for (var i = 0; i < Model.ShopItems.Count; i++)
+    @foreach (var shopItem in Model.ShopItems)
     {
-        var shopItem = Model.ShopItems[i];
-
         <tr>
-            <th scope="row">@(i + 1)</th>
             <td hidden>@shopItem.Id</td>
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                        Дейсвия
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#changeModal">Изменить</a>
+                        </li>
+                        <li><a class="dropdown-item" href="#">Удалить</a></li>
+                    </ul>
+                </div>
+            </td>
             <td>@shopItem.Name</td>
             <td>@(shopItem.Category?.Title ?? "Неизвестно")</td>
-            <td>@shopItem.Description</td>
             <td>@shopItem.Price</td>
         </tr>
     }
@@ -48,7 +56,7 @@
                 </div>
                 <div class="row">
                     <label class="form-label">Категория</label>
-                    <select class="form-select" aria-label="Категории">
+                    <select class="form-select" aria-label="Категории" asp-for="@Model.ChangeShopItem.CategoryId">
                         @foreach (var category in Model.Categories)
                         {
                             <option value="@category.Id">@category.Title</option>
