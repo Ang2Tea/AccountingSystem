@@ -30,6 +30,12 @@ namespace AccountingSystem.Domain.ShopItems
             Transactions = new List<TransactionShopItem>();
         }
 
+        public void SetCategory(Category category)
+        {
+            CategoryId = category.Id;
+            Category = category;
+        }
+
         public Task AddTransaction(TransactionType transactionType, int amount)
         {
             if (Transactions == null)
