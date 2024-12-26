@@ -3,29 +3,37 @@
 @{
     ViewData["Title"] = "Категории";
 }
-@* <div> *@
-@*     <button type="button" class="btn btn-primary">Создать категорию</button> *@
-@* </div> *@
+<div>
+    <a class="btn btn-primary" asp-page="ChangeCategory" asp-route-id="">Создать</a>
+</div>
 
 <table class="table">
     <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col" hidden>Индификатор</th>
-            <th scope="col">Название</th>
-            <th scope="col">Описание</th>
-        </tr>
+    <tr>
+        <th scope="col" hidden>Индификатор</th>
+        <th scope="col"></th>
+        <th scope="col">Название</th>
+    </tr>
     </thead>
     <tbody>
-    @for (var i = 0; i < Model.Categories.Count; i++)
+    @foreach (var shopItem in Model.Categories)
     {
-        var category = Model.Categories[i];
-        
         <tr>
-            <th scope="row">@(i + 1)</th>
-            <td hidden>@category.Id</td>
-            <td>@Model.Categories[i].Title</td>
-            <td>@Model.Categories[i].Description</td>
+            <td hidden>@shopItem.Id</td>
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                        Действия
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" asp-page="ChangeCategory" asp-route-id="@shopItem.Id">Изменить</a>
+                        </li>
+                        <li><a asp-page="Index" asp-page-handler="delete" asp-route-id="@shopItem.Id" class="dropdown-item">Удалить</a></li>
+                    </ul>
+                </div>
+            </td>
+            <td>@shopItem.Title</td>
         </tr>
     }
     </tbody>
