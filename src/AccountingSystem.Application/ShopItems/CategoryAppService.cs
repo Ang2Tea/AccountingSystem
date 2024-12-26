@@ -56,9 +56,16 @@ namespace AccountingSystem.Application.ShopItems
             return result;
         }
 
-        public Task<CategoryDto> UpdateAsync(Guid id, ChangeCategoryDto input)
+        public async Task<CategoryDto> UpdateAsync(Guid id, ChangeCategoryDto input)
         {
-            throw new NotImplementedException();
+            var category = await _categoryRepository.GetByIdAsync(id);
+            category.Title = input.Title;
+            category.Description = input.Description;
+            
+            await _categoryRepository.UpdateAsync(category);
+            
+            var result = MapCategory(category);
+            return result;
         }
 
         public Task DeleteAsync(Guid id)
