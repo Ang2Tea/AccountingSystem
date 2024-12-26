@@ -1,10 +1,13 @@
 using System.Text.RegularExpressions;
 using AccountingSystem.Application.Contract.ShopItems;
+using AccountingSystem.Application.Contract.Transactions;
 using AccountingSystem.Application.Contract.Users;
 using AccountingSystem.Application.ShopItems;
+using AccountingSystem.Application.Transactions;
 using AccountingSystem.Application.Users;
 using AccountingSystem.Domain.Core;
 using AccountingSystem.Domain.ShopItems;
+using AccountingSystem.Domain.Transactions;
 using AccountingSystem.Domain.Users;
 using AccountingSystem.EntityFramework.EntityFrameworkCore;
 using AccountingSystem.EntityFramework.Repositories;
@@ -23,11 +26,13 @@ public static class AccountingSystemExtension
         services.AddTransient<IRepository<User, Guid>, EfRepository<User, Guid>>();
         services.AddTransient<IRepository<Category, Guid>, EfRepository<Category, Guid>>();
         services.AddTransient<IRepository<ShopItem, Guid>, EfRepository<ShopItem, Guid>>();
+        services.AddTransient<IRepository<TransactionShopItem, Guid>, EfRepository<TransactionShopItem, Guid>>();
         
         // Services
         services.AddTransient<IUserAppService, UserAppService>();
         services.AddTransient<ICategoryAppService, CategoryAppService>();
         services.AddTransient<IShopItemAppService, ShopItemsAppService>();
+        services.AddTransient<ITransactionAppService, TransactionAppService>();
     }
 }
 
