@@ -1,0 +1,40 @@
+@page
+@using AccountingSystem.Application.Contract.Transactions
+@model AccountingSystem.Web.Pages.Transactions.Index
+@{
+}
+
+<div>
+    <a class="btn btn-primary" asp-page="CreateTransaction" asp-route-id="">Добавть транкзакцию</a>
+</div>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col" hidden>Индификатор</th>
+        <th scope="col">Время создания</th>
+        <th scope="col">Название товара</th>
+        <th scope="col">Тип</th>
+        <th scope="col">Количество</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var transactionDto in Model.Transactions)
+    {
+        var typeName = transactionDto.Type switch
+        {
+            TransactionType.Dispensing => "Выдача",
+            TransactionType.Receipt => "Получение",
+            _ => ""
+        };
+        
+        <tr>
+            <td hidden>@transactionDto.Id</td>
+            <td>@transactionDto.CreateAt</td>
+            <td>@transactionDto.ShopItem.Name</td>
+            <td>@typeName</td>
+            <td>@transactionDto.Amount</td>
+        </tr>
+    }
+    </tbody>
+</table>

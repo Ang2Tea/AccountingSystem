@@ -1,0 +1,38 @@
+@page
+@model AccountingSystem.Web.Pages.Transactions.CreateTransaction
+@{
+}
+
+<form class="mx-auto" style="width: 400px;" method="post">
+    <div class="form-group">
+        <label class="form-label">Тип</label>
+        <select class="form-select" aria-label="Тип" asp-for="@Model.Transaction.Type">
+            <option value="1">Выдача</option>
+            <option value="2">Получение</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Категория</label>
+        <select class="form-select" aria-label="Товары" asp-for="@Model.Transaction.ShopItemId">
+            @foreach (var shopItemDto in Model.ShopItems)
+            {
+                <option value="@shopItemDto.Id">@shopItemDto.Name</option>
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Количесво</label>
+        <input class="form-control" type="number" asp-for="@Model.Transaction.Amount"/>
+    </div>
+
+    <div class="form-group mt-3 row row-cols-auto">
+        <div class="col">
+            <a asp-page="Index" class="btn btn-secondary">Закрыть</a>
+        </div>
+        <div class="col">
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+        </div>
+    </div>
+</form>
