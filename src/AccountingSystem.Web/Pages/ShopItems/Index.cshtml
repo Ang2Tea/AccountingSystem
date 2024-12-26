@@ -26,12 +26,12 @@
                 <div class="dropdown">
                     <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                        Дейсвия
+                        Действия
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" asp-page="ChangeShopItem" asp-route-id="@shopItem.Id">Изменить</a>
                         </li>
-                        <li><a class="dropdown-item" asp-route-id="@shopItem.Id">Удалить</a></li>
+                        <li><a asp-page="Index" asp-page-handler="delete" asp-route-id="@shopItem.Id" class="dropdown-item">Удалить</a></li>
                     </ul>
                 </div>
             </td>
