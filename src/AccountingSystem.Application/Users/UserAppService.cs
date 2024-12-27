@@ -31,7 +31,7 @@ namespace AccountingSystem.Application.Users
                 Name = user.Name,
                 Surname = user.Surname,
                 Email = user.Email,
-                IsAdmin = user.IsAdmin
+                Roles = user.Roles
             };
             
             return result;
@@ -62,11 +62,6 @@ namespace AccountingSystem.Application.Users
             
             var result = MapToUserDto(user);
             return result;
-        }
-
-        public Task<UserDto> UpdateAsync(Guid id, ChangeUserDto input)
-        {
-            throw new NotImplementedException();
         }
 
         public async Task DeleteAsync(Guid id)
