@@ -39,8 +39,7 @@ namespace AccountingSystem.Application.Users
         
         public async Task<UserDto> CreateAsync(ChangeUserDto input)
         {
-            var salt = _configuration["StringEncryption:Salt"];
-            var newUser = new User(input.Login, input.Password, salt, input.Email, input.Name, input.Surname);
+            var newUser = new User(input.Login, input.Password, "", input.Email, input.Name, input.Surname);
             
             await _userRepository.CreateAsync(newUser);
             return MapToUserDto(newUser);

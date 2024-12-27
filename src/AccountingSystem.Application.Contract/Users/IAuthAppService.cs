@@ -4,6 +4,6 @@ namespace AccountingSystem.Application.Contract.Users
 {
     public interface IAuthAppService
     {
-        Task<string> Auth(UserDto user);
+        Task<string> Auth(LoginInput user);
     }
 }
