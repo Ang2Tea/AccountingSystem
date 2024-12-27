@@ -1,0 +1,30 @@
+@page
+@model AccountingSystem.Web.Pages.Auth.Registration
+@{
+}
+
+<form class="mx-auto" style="width: 400px;" method="post">
+    <div class="form-group">
+        <label class="form-label">Логин</label>
+        <input class="form-control" asp-for="@Model.User.Login"/>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Email</label>
+        <input class="form-control" asp-for="@Model.User.Email"/>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Имя</label>
+        <input class="form-control" asp-for="@Model.User.Name"/>
+    </div>
+
+    <div class="form-group">
+        <label class="form-label">Пароль</label>
+        <input type="password" class="form-control" asp-for="@Model.User.Password"></input>
+    </div>
+
+    <div class="form-group mt-3 row row-cols-auto">
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+    </div>
+</form>
