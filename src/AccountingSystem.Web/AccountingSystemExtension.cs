@@ -30,6 +30,7 @@ public static class AccountingSystemExtension
         
         // Services
         services.AddTransient<IUserAppService, UserAppService>();
+        services.AddTransient<IAuthAppService, AuthAppService>();
         services.AddTransient<ICategoryAppService, CategoryAppService>();
         services.AddTransient<IShopItemAppService, ShopItemsAppService>();
         services.AddTransient<ITransactionAppService, TransactionAppService>();
